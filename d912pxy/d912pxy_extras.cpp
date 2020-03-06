@@ -354,6 +354,9 @@ void d912pxy_extras::DrawMainWindow()
 {
 	ImGui::Begin(BUILD_VERSION_NAME, GetOverlayWindowCloseable(), GetOverlayWindowFlags());
 
+	if (overlayShowMode != eoverlay_edit)
+		ImGui::Text(BUILD_VERSION_NAME);
+
 	if (bShowFps)
 		ImGui::Text("%.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 
